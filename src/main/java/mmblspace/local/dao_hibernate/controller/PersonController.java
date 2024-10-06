@@ -20,7 +20,7 @@ public class PersonController {
 
     @GetMapping("/persons/by-city")
     @ResponseBody
-    @PreAuthorize("hasRole('USER')") 
+    @PreAuthorize("hasRole('USER')")
     public List<Person> getPersonsByCity(@RequestParam("city") String city) {
         List<Person> result = personRepository.findByCity(city);
         return result;
@@ -28,7 +28,7 @@ public class PersonController {
 
     @GetMapping("/persons/by-age")
     @ResponseBody
-    @PreAuthorize("hasRole('USER')") 
+    @PreAuthorize("hasRole('USER')")
     public List<Person> findPersonByPersonId_AgeBeforeOrderByPersonIdAsc(@RequestParam("age") int age) {
         List<Person> result = personRepository.findPersonByPersonId_AgeBeforeOrderByPersonIdAsc(age);
         return result;
@@ -36,7 +36,7 @@ public class PersonController {
 
     @GetMapping("/persons/by-name&surname")
     @ResponseBody
-    @PreAuthorize("hasRole('USER')") 
+    @PreAuthorize("hasRole('USER')")
     public Optional<Person> findPersonByPersonId_NameContainingIgnoreCaseAndAndPersonId_SurnameContainingIgnoreCase(
             @RequestParam(value = "name", required = false) String name,
             @RequestParam(value = "surname", required = false) String surname) {
